@@ -1,6 +1,7 @@
 {
   "name": "System - Yellow Mask",
   "description": "Adds a yellow mask to protect your eye.",
+  "origin": "app://fxos-addon-yellow-mask/manifest.webapp",
   "developer": {
     "name": "Eddie Lin",
     "url": "http://yshl.in"

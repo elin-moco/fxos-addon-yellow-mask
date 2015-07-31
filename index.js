@@ -1,4 +1,5 @@
 (function () {
+  var MANIFEST_URL = '/fxos-addon-yellow-mask/manifest.webapp';
 
   // If injecting into an app that was already running at the time
   // the app was enabled, simply initialize it.
@@ -33,5 +34,18 @@
     // Inject the elements into the system app
     document.body.appendChild(containerEl);
   }
-  
+
+  function uninitialize() {
+    var $$ = document.getElementById.bind(document);
+    var existingContainerEl = $$('yellow-mask');
+    existingContainerEl.parentNode.removeChild(existingContainerEl);
+  }
+
+  navigator.mozApps.mgmt.onenabledstatechange = function(event) {
+    var app = event.application;
+    if (app.manifestURL.indexOf(MANIFEST_URL) > 0 && !app.enabled) {
+      uninitialize();
+    }
+  };
+
 }());
