@@ -1,5 +1,6 @@
 (function () {
-  var MANIFEST_URL = '/fxos-addon-yellow-mask/manifest.webapp';
+  //var MANIFEST_URL = 'app://262f1d31-7c43-054d-85cd-c64786ce1cfc/manifest.webapp';
+  var MANIFEST_URL = 'https://elin-moco.github.io/fxos-addon-yellow-mask/manifest.webapp';
 
   // If injecting into an app that was already running at the time
   // the app was enabled, simply initialize it.
@@ -29,7 +30,6 @@
     var containerEl = document.createElement('div');
     containerEl.setAttribute('id', 'yellow-mask');
     containerEl.setAttribute('data-time-inserted', Date.now());
-    containerEl.setAttribute('style', 'position: fixed; display: block; width: 100%; height: 100%; left: 0px; top: 0px; z-index: 65539; pointer-events: none; background-color: rgba(255, 255, 0, 0.12);');
 
     // Inject the elements into the system app
     document.body.appendChild(containerEl);
@@ -43,7 +43,7 @@
 
   navigator.mozApps.mgmt.onenabledstatechange = function(event) {
     var app = event.application;
-    if (app.manifestURL.indexOf(MANIFEST_URL) > 0 && !app.enabled) {
+    if (app.manifestURL === MANIFEST_URL && !app.enabled) {
       uninitialize();
     }
   };

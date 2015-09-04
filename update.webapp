@@ -1,0 +1,9 @@
+{
+  "name": "System - Yellow Mask",
+  "description": "Adds a yellow mask to protect your eye.",
+  "developer": {
+    "name": "Eddie Lin",
+    "url": "http://yshl.in"
+  },
+  "package_path": "extension.zip"
+}

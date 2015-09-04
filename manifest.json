@@ -1,0 +1,14 @@
+{
+  "name": "System - Yellow Mask",
+  "description": "Adds a yellow mask to protect your eye.",
+  "version": "1.0",
+  "author": "Eddie Lin",
+  "content_scripts": [{
+    "matches": "app://system.gaiamobile.org/index.html",
+    "css": ["index.css"],
+    "js": ["index.js"]
+  }],
+  "icons": {
+    "128": "icons/glasses.png"
+  }
+}
